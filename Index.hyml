@@ -1,0 +1,1927 @@
+# Test0<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Madhusudan Vidhyapith</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2980b9;
+            --secondary: #f39c12;
+            --secondary-dark: #e67e22;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --success: #28a745;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .school-brand {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .school-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .school-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .main-nav {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-link i {
+            font-size: 0.9rem;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            background-color: var(--primary-light);
+            color: var(--white);
+            font-size: 2rem;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem auto 1rem;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card, .vision-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Academics Section */
+        .academics-section {
+            margin-bottom: 4rem;
+        }
+
+        .academics-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .curriculum-list {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .curriculum-list ul {
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .curriculum-list li {
+            margin-bottom: 0.8rem;
+            list-style-position: inside;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .curriculum-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Facilities Section */
+        .facilities-section {
+            margin-bottom: 4rem;
+        }
+
+        .facility-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .facility-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .facility-card:hover .facility-image img {
+            transform: scale(1.1);
+        }
+
+        .facility-content {
+            padding: 1.5rem;
+        }
+
+        .facility-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin-bottom: 4rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-bottom: 4rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            background-color: var(--primary-light);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Login Page */
+        .login-page {
+            display: none;
+            min-height: 100vh;
+            background-color: var(--light);
+        }
+
+        .login-container {
+            max-width: 500px;
+            margin: 3rem auto;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .login-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-body {
+            padding: 2rem;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .login-form .form-label {
+            color: var(--dark);
+        }
+
+        .login-form .form-control {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .login-btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--gray);
+        }
+
+        .login-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Student Dashboard */
+        .dashboard-page {
+            display: none;
+            min-height: 100vh;
+            background-color: var(--light);
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dashboard-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dashboard-brand h2 {
+            font-size: 1.3rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logout-btn:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .dashboard-main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+
+        .dashboard-sidebar {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            border-radius: 5px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: var(--primary-light);
+            color: var(--white);
+        }
+
+        .sidebar-link i {
+            font-size: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .dashboard-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+        }
+
+        .dashboard-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .profile-info h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .profile-meta i {
+            color: var(--primary-light);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: var(--dark);
+            min-width: 120px;
+        }
+
+        .info-value {
+            color: var(--gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .dashboard-main {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-sidebar {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-meta {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .school-name {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .dashboard-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .user-menu {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Website -->
+    <div id="main-website">
+        <header class="main-header">
+            <div class="header-container">
+                <div class="school-brand">
+                    <h1 class="school-name">Shree Madhusudan Vidhyapith</h1>
+                    <p class="school-tagline">Empowering Minds, Building Character</p>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-section="home">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="about">
+                                <i class="fas fa-info-circle"></i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="academics">
+                                <i class="fas fa-book-open"></i> Academics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="facilities">
+                                <i class="fas fa-building"></i> Facilities
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="gallery">
+                                <i class="fas fa-images"></i> Gallery
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="contact">
+                                <i class="fas fa-envelope"></i> Contact
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showLoginPage()">
+                                <i class="fas fa-sign-in-alt"></i> Student Login
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main-container">
+            <!-- Home Section -->
+            <section id="home" class="page-section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Quality Education for Bright Future</h1>
+                        <p class="hero-subtitle">Join us in the journey of knowledge and character building</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary" data-section="admission">
+                                <i class="fas fa-user-graduate"></i> Admission Enquiry
+                            </a>
+                            <a href="#" class="btn btn-outline" data-section="about">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-title">
+                    <h2>Why Choose Our School?</h2>
+                    <p>We provide exceptional education with a focus on holistic development</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Quality Education</h3>
+                            <p>Our experienced faculty provides top-notch education with modern teaching methodologies and personalized attention.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Science Labs</h3>
+                            <p>Well-equipped laboratories for practical learning in Physics, Chemistry and Biology with latest equipment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Sports Facilities</h3>
+                            <p>Excellent sports infrastructure including cricket ground, basketball court, and indoor games for physical development.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- About Us Section -->
+            <section id="about" class="page-section">
+                <div class="section-title">
+                    <h2>About Our School</h2>
+                    <p>Discover our rich history and educational philosophy</p>
+                </div>
+                
+                <div class="about-section">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="School Building">
+                    </div>
+                    <div class="about-content">
+                        <h2>Shree Madhusudan Vidhyapith</h2>
+                        <p>Established in 1995, Shree Madhusudan Vidhyapith has been a beacon of quality education in our community. We believe in nurturing young minds to become confident, compassionate, and responsible global citizens.</p>
+                        <p>Our school provides a stimulating learning environment that encourages curiosity, creativity, and critical thinking. We focus on holistic development that balances academic excellence with co-curricular activities.</p>
+                        
+                        <div class="mission-vision">
+                            <div class="mission-card">
+                                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                                <p>To empower students with knowledge, skills, and values that prepare them to meet life's challenges while maintaining strong moral character and social responsibility.</p>
+                            </div>
+                            <div class="vision-card">
+                                <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                                <p>To be a center of excellence that develops well-rounded individuals who aspire to achieve their full potential and contribute meaningfully to society.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Academics Section -->
+            <section id="academics" class="page-section">
+                <div class="section-title">
+                    <h2>Our Academics</h2>
+                    <p>Comprehensive educational programs for all-round development</p>
+                </div>
+                
+                <div class="academics-section">
+                    <div class="academics-tabs">
+                        <button class="tab-btn active" data-tab="curriculum">Curriculum</button>
+                        <button class="tab-btn" data-tab="programs">Special Programs</button>
+                        <button class="tab-btn" data-tab="assessment">Assessment</button>
+                    </div>
+                    
+                    <div id="curriculum" class="tab-content active">
+                        <div class="curriculum-list">
+                            <h3>Our Comprehensive Curriculum</h3>
+                            <p>We follow the Gujarat State Board curriculum enhanced with value-added programs to provide a well-rounded education:</p>
+                            <ul>
+                                <li>Gujarati, Hindi, and English Language Arts</li>
+                                <li>Mathematics and Advanced Mathematics</li>
+                                <li>Physics, Chemistry, and Biology</li>
+                                <li>History, Geography, and Civics</li>
+                                <li>Computer Science and Digital Literacy</li>
+                                <li>Physical and Health Education</li>
+                                <li>Value Education and Life Skills</li>
+                                <li>Arts, Music, and Drama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div id="programs" class="tab-content">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Science Club</h3>
+                                    <p>Weekly activities, experiments, and annual science fair to promote scientific thinking and innovation among students.</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book-reader"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Reading Program</h3>
+                                    <p>Develops reading skills and love for literature through library periods, book fairs, and reading challenges.</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Math Olympiad</h3>
+                                    <p>Prepares students for competitive mathematics through special classes and participation in regional/national competitions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="assessment" class="tab-content">
+                        <div class="curriculum-list">
+                            <h3>Continuous Comprehensive Evaluation</h3>
+                            <p>We follow a holistic assessment approach that evaluates students on multiple parameters:</p>
+                            <ul>
+                                <li>Formative assessments through projects and activities</li>
+                                <li>Summative assessments with written examinations</li>
+                                <li>Skill-based evaluation in co-curricular areas</li>
+                                <li>Regular parent-teacher meetings</li>
+                                <li>Progress reports with detailed feedback</li>
+                                <li>Remedial classes for students needing extra support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Facilities Section -->
+            <section id="facilities" class="page-section">
+                <div class="section-title">
+                    <h2>Our Facilities</h2>
+                    <p>State-of-the-art infrastructure to support learning and growth</p>
+                </div>
+                
+                <div class="facilities-section">
+                    <div class="features-grid">
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Classrooms">
+                            </div>
+                            <div class="facility-content">
+                                <h3>Smart Classrooms</h3>
+                                <p>Technology-enabled classrooms with digital boards, projectors, and interactive learning tools.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Library">
+                            </div>
+                            <div class="facility-content">
+                                <h3>Library</h3>
+                                <p>Well-stocked library with over 10,000 books, periodicals, and digital resources.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="https://images.unsplash.com/photo-1581093057302-7b1a8a7b3e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Science Lab">
+                            </div>
+                            <div class="facility-content">
+                                <h3>Science Labs</h3>
+                                <p>Fully equipped laboratories for Physics, Chemistry, and Biology with modern equipment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sports">
+                            </div>
+                            <div class="facility-content">
+                                <h3>Sports Complex</h3>
+                                <p>Cricket ground, basketball court, badminton courts, and indoor games facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Gallery Section -->
+            <section id="gallery" class="page-section">
+                <div class="section-title">
+                    <h2>School Gallery</h2>
+                    <p>Moments from our vibrant school life</p>
+                </div>
+                
+                <div class="gallery-section">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="School Building">
+                            <div class="gallery-caption">Our Campus</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Classroom">
+                            <div class="gallery-caption">Smart Classrooms</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Sports Day">
+                            <div class="gallery-caption">Annual Sports Day</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Science Fair">
+                            <div class="gallery-caption">Science Exhibition</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cultural Event">
+                            <div class="gallery-caption">Cultural Programs</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" alt="Field Trip">
+                            <div class="gallery-caption">Educational Trips</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="page-section">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with our school administration</p>
+                </div>
+                
+                <div class="contact-section">
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h3>School Information</h3>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Address</h4>
+                                        <p>Shree Madhusudan Vidhyapith<br>
+                                        Near City Bus Stand, Main Road<br>
+                                        City - 360 001, Gujarat, India</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Phone</h4>
+                                        <p>+91 1234567890<br>
+                                        +91 9876543210</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Email</h4>
+                                        <p>info@madhusudanvidhyapith.edu<br>
+                                        principal@madhusudanvidhyapith.edu</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Office Hours</h4>
+                                        <p>Monday - Friday: 8:00 AM - 4:00 PM<br>
+                                        Saturday: 8:00 AM - 12:30 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3>Send Us a Message</h3>
+                            <form id="enquiry-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" id="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" id="subject" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" class="form-control" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.123456789012!2d72.12345678901234!3d23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzI0LjQiTiA3MsKwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-section="home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#" data-section="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#" data-section="academics"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                        <li><a href="#" data-section="facilities"><i class="fas fa-chevron-right"></i> Facilities</a></li>
+                        <li><a href="#" data-section="gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#" data-section="contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Near City Bus Stand, Main Road, City</a></li>
+                        <li><a href="tel:+911234567890"><i class="fas fa-phone-alt"></i> +91 1234567890</a></li>
+                        <li><a href="mailto:info@madhusudanvidhyapith.edu"><i class="fas fa-envelope"></i> info@madhusudanvidhyapith.edu</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 4:00 PM</a></li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Important Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Admission Process</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> School Calendar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Results</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Parent Portal</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Career Opportunities</a></li>
+                        <li><a href="#" onclick="showLoginPage()"><i class="fas fa-chevron-right"></i> Student Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Shree Madhusudan Vidhyapith. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Login Page -->
+    <div id="login-page" class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Student Login</h2>
+                <p>Access your student dashboard with your registered phone number</p>
+            </div>
+            
+            <div class="login-body">
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="login-phone" class="form-label">Registered Phone Number</label>
+                        <input type="tel" id="login-phone" class="form-control" placeholder="Enter your 10-digit mobile number" required>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+                
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="#" onclick="showMainWebsite()">Contact school administration</a></p>
+                    <p><a href="#" onclick="showMainWebsite()"><i class="fas fa-arrow-left"></i> Back to Homepage</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Student Dashboard -->
+    <div id="dashboard-page" class="dashboard-page">
+        <header class="dashboard-header">
+            <div class="dashboard-nav">
+                <div class="dashboard-brand">
+                    <div class="user-avatar">VV</div>
+                    <h2>Student Dashboard</h2>
+                </div>
+                
+                <div class="user-menu">
+                    <button class="logout-btn" onclick="showLoginPage()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-main">
+            <aside class="dashboard-sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link active" data-tab="profile">
+                            <i class="fas fa-user"></i> Profile
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-tab="academics">
+                            <i class="fas fa-book"></i> Academics
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-tab="attendance">
+                            <i class="fas fa-calendar-check"></i> Attendance
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-tab="timetable">
+                            <i class="fas fa-calendar-alt"></i> Time Table
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-tab="homework">
+                            <i class="fas fa-tasks"></i> Homework
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link" data-tab="notices">
+                            <i class="fas fa-bullhorn"></i> Notices
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            
+            <div class="dashboard-content">
+                <!-- Profile Tab -->
+                <div id="profile-tab" class="dashboard-tab active">
+                    <h2 class="dashboard-title">Student Profile</h2>
+                    
+                    <div class="profile-header">
+                        <div class="profile-avatar">VV</div>
+                        <div class="profile-info">
+                            <h2>VAIBHAV VIMALKUMAR JARIWALA</h2>
+                            <div class="profile-meta">
+                                <span><i class="fas fa-id-card"></i> SMV20230045</span>
+                                <span><i class="fas fa-graduation-cap"></i> Standard 7 - A</span>
+                                <span><i class="fas fa-birthday-cake"></i> 15/03/2010</span>
+                                <span><i class="fas fa-phone"></i> +91 9876543210</span>
+                            </div>
+                            <p>Class Teacher: <strong>Mrs. Sunita Patel</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-grid">
+                        <div class="info-card">
+                            <h3>Personal Information</h3>
+                            <div class="info-item">
+                                <span class="info-label">Full Name:</span>
+                                <span class="info-value">Vaibhav Vimalkumar Jariwala</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Date of Birth:</span>
+                                <span class="info-value">15th March 2010</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Gender:</span>
+                                <span class="info-value">Male</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Blood Group:</span>
+                                <span class="info-value">B+</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Address:</span>
+                                <span class="info-value">123 Main Street, City - 360001, Gujarat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Contact Information</h3>
+                            <div class="info-item">
+                                <span class="info-label">Phone:</span>
+                                <span class="info-value">+91 9876543210</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">vaibhav.jariwala@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Parent Name:</span>
+                                <span class="info-value">Vimalkumar Jariwala</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Parent Phone:</span>
+                                <span class="info-value">+91 9876543211</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Parent Email:</span>
+                                <span class="info-value">vimalkumar.j@example.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Academic Information</h3>
+                            <div class="info-item">
+                                <span class="info-label">Roll Number:</span>
+                                <span class="info-value">12</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Academic Year:</span>
+                                <span class="info-value">2023-24</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Class Teacher:</span>
+                                <span class="info-value">Mrs. Sunita Patel</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">House:</span>
+                                <span class="info-value">Blue House</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Transport:</span>
+                                <span class="info-value">Bus Route 3 (Stop: Main Road)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Academics Tab -->
+                <div id="academics-tab" class="dashboard-tab">
+                    <h2 class="dashboard-title">Academic Performance</h2>
+                    
+                    <div class="info-card">
+                        <h3>Current Term Results</h3>
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="background-color: var(--primary); color: white;">
+                                        <th style="padding: 12px; text-align: left;">Subject</th>
+                                        <th style="padding: 12px; text-align: center;">Marks Obtained</th>
+                                        <th style="padding: 12px; text-align: center;">Total Marks</th>
+                                        <th style="padding: 12px; text-align: center;">Percentage</th>
+                                        <th style="padding: 12px; text-align: center;">Grade</th>
+                                        <th style="padding: 12px; text-align: center;">Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">Gujarati</td>
+                                        <td style="padding: 12px; text-align: center;">85</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">85%</td>
+                                        <td style="padding: 12px; text-align: center;">A</td>
+                                        <td style="padding: 12px; text-align: center;">Excellent</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">Hindi</td>
+                                        <td style="padding: 12px; text-align: center;">78</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">78%</td>
+                                        <td style="padding: 12px; text-align: center;">B+</td>
+                                        <td style="padding: 12px; text-align: center;">Good</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">English</td>
+                                        <td style="padding: 12px; text-align: center;">92</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">92%</td>
+                                        <td style="padding: 12px; text-align: center;">A+</td>
+                                        <td style="padding: 12px; text-align: center;">Outstanding</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">Mathematics</td>
+                                        <td style="padding: 12px; text-align: center;">88</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">88%</td>
+                                        <td style="padding: 12px; text-align: center;">A</td>
+                                        <td style="padding: 12px; text-align: center;">Excellent</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">Science</td>
+                                        <td style="padding: 12px; text-align: center;">90</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">90%</td>
+                                        <td style="padding: 12px; text-align: center;">A+</td>
+                                        <td style="padding: 12px; text-align: center;">Outstanding</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 12px;">Social Science</td>
+                                        <td style="padding: 12px; text-align: center;">82</td>
+                                        <td style="padding: 12px; text-align: center;">100</td>
+                                        <td style="padding: 12px; text-align: center;">82%</td>
+                                        <td style="padding: 12px; text-align: center;">B+</td>
+                                        <td style="padding: 12px; text-align: center;">Very Good</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="background-color: var(--light);">
+                                        <td style="padding: 12px; font-weight: 600;">Overall</td>
+                                        <td style="padding: 12px; text-align: center; font-weight: 600;">515</td>
+                                        <td style="padding: 12px; text-align: center; font-weight: 600;">600</td>
+                                        <td style="padding: 12px; text-align: center; font-weight: 600;">85.83%</td>
+                                        <td style="padding: 12px; text-align: center; font-weight: 600;">A</td>
+                                        <td style="padding: 12px; text-align: center; font-weight: 600;">Excellent</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Subject-wise Performance</h3>
+                        <div style="height: 300px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <p style="color: var(--gray);">Performance chart would be displayed here</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other tabs would be implemented similarly -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Main Application Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the application
+            initApp();
+        });
+
+        function initApp() {
+            // Set up main website navigation
+            setupMainNavigation();
+            
+            // Set up login form
+            setupLoginForm();
+            
+            // Set up dashboard navigation
+            setupDashboardNavigation();
+            
+            // Set up academics tabs
+            setupAcademicsTabs();
+            
+            // Show main website by default
+            showMainWebsite();
+        }
+
+        function setupMainNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link, .footer-links a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    if (section) {
+                        showSection(section);
+                    }
+                });
+            });
+        }
+
+        function setupLoginForm() {
+            const loginForm = document.getElementById('login-form');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const phoneNumber = document.getElementById('login-phone').value;
+                
+                // Basic validation
+                if (phoneNumber.length === 10 && /^\d+$/.test(phoneNumber)) {
+                    showDashboardPage();
+                } else {
+                    alert('Please enter a valid 10-digit phone number');
+                }
+            });
+        }
+
+        function setupDashboardNavigation() {
+            const dashboardLinks = document.querySelectorAll('.sidebar-link');
+            
+            dashboardLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tab = this.getAttribute('data-tab');
+                    showDashboardTab(tab);
+                });
+            });
+        }
+
+        function setupAcademicsTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    showAcademicsTab(tabId);
+                });
+            });
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top of section
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showMainWebsite() {
+            document.getElementById('main-website').style.display = 'block';
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('dashboard-page').style.display = 'none';
+            
+            // Show home section by default
+            showSection('home');
+        }
+
+        function showLoginPage() {
+            document.getElementById('main-website').style.display = 'none';
+            document.getElementById('login-page').style.display = 'block';
+            document.getElementById('dashboard-page').style.display = 'none';
+            
+            // Reset login form
+            document.getElementById('login-form').reset();
+        }
+
+        function showDashboardPage() {
+            document.getElementById('main-website').style.display = 'none';
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('dashboard-page').style.display = 'block';
+            
+            // Show profile tab by default
+            showDashboardTab('profile');
+        }
+
+        function showDashboardTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.dashboard-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId + '-tab').classList.add('active');
+            
+            // Update active sidebar link
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-tab') === tabId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function showAcademicsTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update active tab button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-tab') === tabId) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
